@@ -21,7 +21,14 @@ public class ServicoTestaCliente {
     @WebMethod
     public Cliente testaCliente(@WebParam(name = "cliente")
             @XmlElement(required = true) Cliente objeto){
-        objeto.setId(9999);
+        objeto.setNome("João Borges");
+        objeto.setEndereco("Avenida Presidente Vargas, 1313");
+        objeto.setCep_origem("99020020");
+        objeto.setCep_destino("99030030");
+        objeto.setPrazo_entrega(10);
+        objeto.setVal_frete(100.00);
+        objeto.setVal_compra(150.00);
+        objeto.setVal_total(110.00);
         return objeto;
     }
 }

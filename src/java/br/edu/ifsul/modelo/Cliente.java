@@ -33,32 +33,36 @@ public class Cliente implements Serializable{
     @SequenceGenerator(name = "seq_cliente", sequenceName = "seq_cliente_id", allocationSize = 1)
     @GeneratedValue(generator = "seq_cliente", strategy = GenerationType.SEQUENCE)
     @XmlElement(required = true)
+    @Column(name = "id")
     private Integer id;    
     @Column(name = "nome", length = 50, nullable = false)
     @XmlElement(required = true)
     private String nome;    
-    @Column(name = "endereco", length = 50, nullable = false)
+    @Column(name = "endereco", length = 100, nullable = false)
     @XmlElement(required = true)
     private String endereco;    
     @XmlElement(required = true)
-    @Column(name = "val_compra", nullable = false, columnDefinition = "numerica(5,2)")
+    @Column(name = "val_compra", nullable = false, columnDefinition = "numeric(5,2)")
     private Double val_compra;    
     @XmlElement(required = true)
     @Column(name = "cep_origem", nullable = false)
     private String cep_origem;    
     @XmlElement(required = true)
-    @Column(name = "cep_destino", nullable = false, columnDefinition = "numerica(5,2)")
+    @Column(name = "cep_destino", nullable = false)
     private String cep_destino;    
-    @XmlElement(required = true)
-    @Column(name = "val_frete", nullable = false, columnDefinition = "numerica(5,2)")
+    @XmlElement(required = false)
+    @Column(name = "val_frete", nullable = false, columnDefinition = "numeric(5,2)")
     private Double val_frete;
-    @XmlElement(required = true)
-    @Column(name = "val_total", nullable = false, columnDefinition = "numerica(5,2)")
+    @XmlElement(required = false)
+    @Column(name = "val_total", nullable = false, columnDefinition = "numeric(5,2)")
     private Double val_total;      
-    @XmlElement(required = true)
-    @Column(name = "prazo_entrega", nullable = false, columnDefinition = "numerica(5,2)")
-    private Integer prazo_entrega;    
+    @XmlElement(required = false)
+    @Column(name = "prazo_entrega", nullable = false)
+    private Integer prazo_entrega; 
     
+    public Cliente(){
+        
+    }
 
     public Integer getId() {
         return id;
@@ -116,6 +120,14 @@ public class Cliente implements Serializable{
         this.val_frete = val_frete;
     }
 
+    public Double getVal_total() {
+        return val_total;
+    }
+
+    public void setVal_total(Double val_total) {
+        this.val_total = val_total;
+    }
+
     public Integer getPrazo_entrega() {
         return prazo_entrega;
     }
@@ -127,7 +139,7 @@ public class Cliente implements Serializable{
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 89 * hash + Objects.hashCode(this.id);
+        hash = 83 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -149,7 +161,7 @@ public class Cliente implements Serializable{
         return true;
     }
 
-  
+   
     
-    
-}
+
+   }
