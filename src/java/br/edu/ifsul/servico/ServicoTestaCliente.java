@@ -5,7 +5,7 @@
  */
 package br.edu.ifsul.servico;
 
-import br.edu.ifsul.modelo.Pessoa;
+import br.edu.ifsul.modelo.Cliente;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
@@ -19,8 +19,8 @@ import javax.xml.bind.annotation.XmlElement;
 public class ServicoTestaCliente {
     
     @WebMethod
-    public Pessoa testaPessoa(@WebParam(name = "pessoa")
-            @XmlElement(required = true) Pessoa objeto){
+    public Cliente testaCliente(@WebParam(name = "cliente")
+            @XmlElement(required = true) Cliente objeto){
         objeto.setId(9999);
         return objeto;
     }

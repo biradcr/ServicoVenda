@@ -5,8 +5,8 @@
  */
 //package br.edu.ifsul.servico;
 //
-//import br.edu.ifsul.ejb.PessoaDAO;
-//import br.edu.ifsul.modelo.Pessoa;
+//import br.edu.ifsul.ejb.ClienteDAO;
+//import br.edu.ifsul.modelo.Cliente;
 //import java.util.List;
 //import javax.ejb.EJB;
 //import javax.jws.WebMethod;
@@ -22,39 +22,39 @@
 //public class ServicoCliente {
 //    
 //    @EJB
-//    private PessoaDAO dao;
+//    private ClienteDAO dao;
 //    
 //    public ServicoCliente(){
 //        
 //    }
 //    
 //    @WebMethod
-//    public List<Pessoa> listaPessoas(){
+//    public List<Cliente> listaClientes(){
 //        return dao.getLista();                
 //    }
 //    
 //    @WebMethod
-//    public Pessoa inserir(@WebParam(name = "pessoa")
-//            @XmlElement(required = true)Pessoa obj){
+//    public Cliente inserir(@WebParam(name = "cliente")
+//            @XmlElement(required = true)Cliente obj){
 //        return dao.inserir(obj);
 //    }
 //    
 //    @WebMethod
-//    public Pessoa alterar(@WebParam(name = "pessoa")
-//            @XmlElement(required = true)Pessoa obj){
+//    public Cliente alterar(@WebParam(name = "cliente")
+//            @XmlElement(required = true)Cliente obj){
 //        return dao.alterar(obj);
 //    }
 //    
 //    @WebMethod
-//    public boolean remover(@WebParam(name = "pessoa")
+//    public boolean remover(@WebParam(name = "cliente")
 //            @XmlElement(required = true) Integer id){
 //        return dao.remover(id);
 //    }
 //}
 package br.edu.ifsul.servico;
 
-import br.edu.ifsul.ejb.PessoaDAO;
-import br.edu.ifsul.modelo.Pessoa;
+import br.edu.ifsul.ejb.ClienteDAO;
+import br.edu.ifsul.modelo.Cliente;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.jws.WebMethod;
@@ -72,26 +72,26 @@ import javax.xml.bind.annotation.XmlElement;
 public class ServicoCliente {
     
     @EJB    
-    private PessoaDAO dao;
+    private ClienteDAO dao;
     
     public ServicoCliente(){
         
     }
     
     @WebMethod
-    public List<Pessoa> listaPessoas(){
+    public List<Cliente> listaClientes(){
         return dao.getLista();
     }
     
     @WebMethod
-    public Pessoa inserir(@WebParam(name = "pessoa")
-            @XmlElement(required = true) Pessoa obj){
+    public Cliente inserir(@WebParam(name = "cliente")
+            @XmlElement(required = true) Cliente obj){
         return dao.inserir(obj);
     }
     
     @WebMethod
-    public Pessoa alterar(@WebParam(name = "pessoa")
-            @XmlElement(required = true) Pessoa obj){
+    public Cliente alterar(@WebParam(name = "cliente")
+            @XmlElement(required = true) Cliente obj){
         return dao.alterar(obj);
     }
     

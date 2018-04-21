@@ -57,8 +57,7 @@ public class Cliente implements Serializable{
     private Double val_total;      
     @XmlElement(required = true)
     @Column(name = "prazo_entrega", nullable = false, columnDefinition = "numerica(5,2)")
-    private Integer prazo_entrega;
-    
+    private Integer prazo_entrega;    
     
 
     public Integer getId() {
