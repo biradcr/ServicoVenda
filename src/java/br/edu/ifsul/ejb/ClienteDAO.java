@@ -51,7 +51,8 @@ public class ClienteDAO implements Serializable{
     
 
     public List<Cliente> getLista() {
-        return em.createQuery("FROM cliente").getResultList();
+        lista = em.createQuery("select c from Cliente c").getResultList();
+        return lista;
     }
 
     public void setLista(List<Cliente> lista) {
